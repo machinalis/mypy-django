@@ -2,8 +2,8 @@
 
 from collections import OrderedDict
 
-from typing import (Any, Callable, Dict, Generic, Hashable, Iterable, Mapping, MutableMapping,
-                    MutableSet, Optional, overload, Tuple, TypeVar, Union)
+from typing import (Any, Callable, Dict, Generic, Hashable, Iterable, Iterator, Mapping,
+                    MutableMapping, MutableSet, Optional, overload, Tuple, TypeVar, Union)
 
 KT = TypeVar('KT')
 VT = TypeVar('VT')
@@ -32,11 +32,17 @@ class MultiValueDict(MutableMapping[KT, VT], Generic[KT, VT]):
     def appendlist(self, key: KT, value: VT) -> None: ...
     def lists(self) -> Iterable[Tuple[KT, List[VT]]]: ...
     def copy(self) -> 'MultiValueDict[KT, VT]': ...
-    @overload
-    def update(self, args: Mapping[KT, VT]) -> None: ...  # type: ignore
+    @overload  # type: ignore
+    def update(self, args: Mapping[KT, VT]) -> None: ...
     @overload
     def update(self, *args: Mapping[KT, VT], **kwargs: Iterable[Tuple[KT, VT]]) -> None: ...  # type: ignore
     def dict(self) -> Dict[KT, Union[VT, List[VT]]]: ...
+
+    # These overrides are needed to convince mypy that this isn't an abstract class
+    def __delitem__(self, k: KT) -> None: ...
+    def __setitem__(self, k: KT, v: VT) -> None: ...
+    def __len__(self) -> int: ...
+    def __iter__(self) -> Iterator[KT]: ...
 
 class ImmutableList(tuple, Generic[VT]):
     warning = ...  # type: str
