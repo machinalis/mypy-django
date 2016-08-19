@@ -19,6 +19,8 @@ ReverseLookup = MultiValueDict[str, Tuple[NormalizedRegexForms, str, Params]]
 Namespace = Dict[str, Tuple[str, 'RegexURLResolver']]
 AppDict = Dict[str, List[str]]
 
+_View = Callable[..., HttpResponse]
+
 class ResolverMatch:
     func = ...  # type: Callable
     args = ...  # type: Iterable[object]
@@ -41,10 +43,10 @@ class LocaleRegexProvider:
     def regex(self) -> Pattern[str]: ...
 
 class RegexURLPattern(LocaleRegexProvider):
-    callback = ...  # type: Callable[..., HttpResponse]
+    callback = ...  # type: _View
     default_args = ...  # type: Params
     name = ...  # type: Optional[str]
-    def __init__(self, regex: str, callback: Callable[..., HttpResponse], default_args: Params=None, name: str=None) -> None: ...
+    def __init__(self, regex: str, callback: _View, default_args: Params=None, name: str=None) -> None: ...
     def resolve(self, path: str) -> ResolverMatch: ...
     def lookup_str(self) -> str: ...
 
