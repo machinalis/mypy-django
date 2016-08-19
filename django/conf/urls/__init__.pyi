@@ -2,7 +2,7 @@
 
 from typing import Any, Callable, Dict, List, Optional, overload, Tuple, Union
 
-from django.http import HttpResponse
+from django.http.response import HttpResponse
 from django.urls import (
     RegexURLPattern, RegexURLResolver
 )
@@ -14,6 +14,7 @@ handler404 = ...  # type: str
 handler500 = ...  # type: str
 
 def include(arg: Any, namespace: str=None, app_name: str=None) -> Tuple[URLConf, Optional[str], Optional[str]]: ...
+
 @overload
 def url(regex: str, view: Callable[..., HttpResponse], kwargs: Dict[str, Any]=None, name: str=None) -> RegexURLPattern: ...
 @overload

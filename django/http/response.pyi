@@ -4,7 +4,6 @@ import datetime
 from json import JSONEncoder
 from typing import Any, Dict, Iterable, Iterator, Optional, overload, Tuple, Type, Union
 
-from django.core.serializers.json import DjangoJSONEncoder
 from django.http.cookie import SimpleCookie
 import six
 
