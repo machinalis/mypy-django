@@ -2,7 +2,7 @@
 
 from typing import Any, Optional, Union
 from datetime import tzinfo, datetime, timedelta
-from django.utils.decorators import ContextDecorator
+from contextlib import ContextDecorator
 
 class UTC(tzinfo):
     def utcoffset(self, dt: Optional[datetime]) -> Optional[timedelta]: ...
