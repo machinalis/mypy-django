@@ -1,8 +1,7 @@
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Type
 
 from django.db import models
 from django.http import HttpResponse, HttpRequest
-from django.utils.translation import ugettext as _
 from django.views.generic.base import ContextMixin, TemplateResponseMixin, View
 
 class SingleObjectMixin(ContextMixin):

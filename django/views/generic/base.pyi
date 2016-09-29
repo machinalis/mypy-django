@@ -1,4 +1,4 @@
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, Tuple, Type
 
 from django import http
 
@@ -13,7 +13,6 @@ class View:
     args = ...  # type: Tuple[object, ...]
     kwargs = ...  # type: Dict[str, object]
     def __init__(self, **kwargs: object) -> None: ...
-    head = ...  # type: Any
     def as_view(cls: Any, **initkwargs: object) -> Callable[..., http.HttpResponse]: ...
     def dispatch(self, request: http.HttpRequest, *args: object, **kwargs: object) -> http.HttpResponse: ...
     def http_method_not_allowed(self, request: http.HttpRequest, *args: object, **kwargs: object) -> http.HttpResponse: ...

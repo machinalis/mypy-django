@@ -1,9 +1,8 @@
 import datetime
-from typing import Any, Dict, Optional, Sequence, Tuple
+from typing import Any, Dict, Optional, Sequence, Tuple, Type
 
 from django.db import models
 from django.http import HttpRequest, HttpResponse
-from django.utils.translation import ugettext as _
 from django.views.generic.base import View
 from django.views.generic.detail import BaseDetailView, SingleObjectTemplateResponseMixin
 from django.views.generic.list import MultipleObjectMixin, MultipleObjectTemplateResponseMixin

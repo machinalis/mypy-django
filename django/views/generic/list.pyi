@@ -1,9 +1,9 @@
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Type
 
+from django.db.models import Model
 from django.db.models.query import QuerySet
 from django.core.paginator import Paginator
 from django.http import HttpRequest, HttpResponse
-from django.utils.translation import ugettext as _
 from django.views.generic.base import ContextMixin, TemplateResponseMixin, View
 
 class MultipleObjectMixin(ContextMixin):
