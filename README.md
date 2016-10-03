@@ -90,7 +90,7 @@ More in general, it makes sense to use static typing for django given the follow
 ## Full example
 
 I reimplemented most of the standard Django tutorial, but with annotations so you can see how it
-looks. The code (and a README with some comments) are at
+looks. The code (and a README with some details of problems and solutions found when annotating) are at
 https://github.com/machinalis/mypy-django-example
 
 ## Known issues
