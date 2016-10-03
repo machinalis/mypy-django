@@ -1,7 +1,7 @@
 from typing import Any, Dict, Optional, Type
 
 from django.db import models
-from django.forms import models as model_forms, Form
+from django.forms import models as model_forms, Form  # type: ignore  # This will be solved when adding forms module
 from django.http import HttpResponse, HttpRequest
 from django.views.generic.base import ContextMixin, TemplateResponseMixin, View
 from django.views.generic.detail import BaseDetailView, SingleObjectMixin, SingleObjectTemplateResponseMixin

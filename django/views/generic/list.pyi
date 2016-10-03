@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple, Type
 
 from django.db.models import Model
 from django.db.models.query import QuerySet
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator  # type: ignore  # This will be fixed when adding the paginator module
 from django.http import HttpRequest, HttpResponse
 from django.views.generic.base import ContextMixin, TemplateResponseMixin, View
 
