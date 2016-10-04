@@ -1,9 +1,7 @@
 # mypy-django
-## Type stubs for using the mypy static type-checker in your Django projects
+## Type stubs to use the mypy static type-checker with your Django projects
 
-This project includes the [PEP-484](https://www.python.org/dev/peps/pep-0484/) compatible "type stubs" for important Django APIs. Using it with
-a compliant checking tool (typically, [mypy](http://mypy-lang.org/)) allows you to document and
-verify more of your code. It allows you to annotate code like this
+This project includes the [PEP-484](https://www.python.org/dev/peps/pep-0484/) compatible "type stubs" for Django APIs. Using a compliant checking tool (typically, [mypy](http://mypy-lang.org/)), it allows you to document and verify more of your code. Your annotated code will look like:
 
 ```python
 def vote(request: HttpRequest, question_id: str) -> HttpResponse:
@@ -18,7 +16,7 @@ def vote(request: HttpRequest, question_id: str) -> HttpResponse:
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 ```
 
-If you use incorrect annotations, like in the following code:
+If you use incorrect annotations, like in the following example
 
 ```python
 class ResultsView(generic.DetailView):
@@ -44,15 +42,14 @@ polls/views.py:41: error: Return type of "get_template_names" incompatible with 
 
 ## Installation and usage
 
-You'll need to install mypy (other PEP-484 checkers might work, but I haven't tested).
+You'll need to install mypy (other PEP-484 checkers might work, but I haven't tested them).
 `pip install mypy-lang` should do the trick. There are no other requirements.
 
 This is not a python package (no actual executable code), so this is not installed with `pip` or
 available in [PyPI](https://pypi.python.org/pypi). You can just `git clone` the latest version from
 https://github.com/machinalis/mypy-django.git or download and unzip https://github.com/machinalis/mypy-django/archive/master.zip
 
-Once you have your copy, you should set your `MYPYPATH` environment variable to point to the files,
-for example (in Linux/bash):
+Once you have your copy, set your `MYPYPATH` environment variable to point to the files. For example (in Linux/bash):
 
 ```
 $ export MYPYPATH=/home/dmoisset/mypy-django/
@@ -68,13 +65,11 @@ that the path exists, and that it points to the correct level in the directory t
 
 ## Motivation
 
-We are building this as a tool at [Machinalis](http://www.machinalis.com) as an additional tool to
-improve the quality of the Django systems we build for our clients. Feel free to contact me if you want to hear more about
-how we use it or how it can be applied.
-I can be found at dmoisset@machinalis.com or at [@dmoisset](http://twitter.com/dmoisset) via
+We are building this as a tool at [Machinalis](http://www.machinalis.com) to improve the quality of the Django projects we build for our clients. Feel free to contact me if you want to hear more about
+how we use it or how it can be applied. I can be found at dmoisset@machinalis.com or at [@dmoisset](http://twitter.com/dmoisset) via
 Twitter.
 
-More in general, it makes sense to use static typing for django given the following
+In a more general perspective, it makes sense to use static typing for Django given the following:
 
 1. Much of the user application code for Django projects consists in operating on objects defined
    by the framework. Unlike other APIs where you mostly pass around standard python data structures,
@@ -89,8 +84,8 @@ More in general, it makes sense to use static typing for django given the follow
 
 ## Full example
 
-I reimplemented most of the standard Django tutorial, but with annotations so you can see how it
-looks. The code (and a README with some details of problems and solutions found when annotating) are at
+I reimplemented most of the standard Django tutorial with annotations, so you can see how it
+looks. The code (and a README with some details of problems and solutions found when annotating) are available at
 https://github.com/machinalis/mypy-django-example
 
 ## Known issues
