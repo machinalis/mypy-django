@@ -40,6 +40,8 @@ polls/views.py:41: error: Return type of "get_template_names" incompatible with 
 
 ```
 
+![Mypy Pony](https://pbs.twimg.com/media/Ct7K2c3W8AAvXJI.jpg:small)
+
 ## Installation and usage
 
 You'll need to install mypy (other PEP-484 checkers might work, but I haven't tested them).
