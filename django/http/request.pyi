@@ -18,7 +18,7 @@ class RawPostDataException(Exception): ...
 UploadHandlerList = Union[List[uploadhandler.FileUploadHandler],
                           ImmutableList[uploadhandler.FileUploadHandler]]
 
-class HttpRequest:
+class HttpRequest(BinaryIO):
     GET = ...  # type: QueryDict
     POST = ...  # type: QueryDict
     COOKIES = ...  # type: Dict[str, str]
