@@ -2,7 +2,7 @@
 
 import datetime
 from json import JSONEncoder
-from typing import Any, Dict, Iterable, Iterator, Optional, overload, Tuple, Type, Union
+from typing import Any, Dict, Iterable, Iterator, List, Optional, overload, Tuple, Type, Union
 
 from django.http.cookie import SimpleCookie
 import six

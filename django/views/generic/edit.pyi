@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional, Type
+from typing import Any, Dict, List, Optional, Type
 
 from django.db import models
 from django.forms import models as model_forms, Form  # type: ignore  # This will be solved when adding forms module

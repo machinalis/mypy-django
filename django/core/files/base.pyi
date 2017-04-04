@@ -6,7 +6,7 @@ from django.core.files.utils import FileProxyMixin
 class File(FileProxyMixin, Sized, Iterable[bytes]):
     DEFAULT_CHUNK_SIZE = ...  # type: int
     file = ...  # type: Any
-    name = ...  # type: Optional[str]
+    name: Optional[str] = ...  # type: ignore
     mode = ...  # type: str
     size = ... # type: int
 
