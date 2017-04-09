@@ -45,7 +45,7 @@ polls/views.py:41: error: Return type of "get_template_names" incompatible with 
 ## Installation and usage
 
 You'll need to install mypy (other PEP-484 checkers might work, but I haven't tested them).
-`pip install mypy-lang` should do the trick. There are no other requirements.
+`pip install mypy` should do the trick. There are no other requirements.
 
 This is not a python package (no actual executable code), so this is not installed with `pip` or
 available in [PyPI](https://pypi.python.org/pypi). You can just `git clone` the latest version from
